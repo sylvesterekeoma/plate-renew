@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "PlateRenew",
+    "slug": "plate-renew",
+    "scheme": "platerenew",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B3D2E"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.platerenew.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "PlateRenew uses your camera for face verification and to scan expired documents so we can auto-fill your renewal details.",
+        "NSPhotoLibraryUsageDescription": "PlateRenew needs photo library access so you can upload a photo of your expired license or vehicle papers."
+      }
+    },
+    "android": {
+      "package": "com.platerenew.app",
+      "permissions": ["CAMERA", "READ_MEDIA_IMAGES"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#0B3D2E"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "PlateRenew uses your camera for face verification and document scanning."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "PlateRenew needs photo library access to upload expired documents."
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}
